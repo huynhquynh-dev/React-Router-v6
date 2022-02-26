@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Home from './components/Home';
+import reportWebVitals from 'reportWebVitals';
+import App from './App';
 import About from './components/About';
-import { screen } from '@testing-library/react';
+import Home from './components/Home';
+import NotFound from './components/NotFound';
+import './index.css';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -15,6 +15,7 @@ ReactDOM.render(
         <Route path="/" element={<App />}>
           <Route path="home" element={<Home />} />
           <Route path="about" element={<About />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>
