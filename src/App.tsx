@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import './App.css';
 
 function App() {
@@ -9,6 +9,7 @@ function App() {
       <nav>
         <Link to="/home">Home</Link> | <Link to="/about">About</Link>
       </nav>
+      <Outlet /> {/* Giống như {children}, render các path con*/}
     </div>
   );
 }
