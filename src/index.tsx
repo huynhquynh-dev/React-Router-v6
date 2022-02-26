@@ -14,7 +14,7 @@ ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/react" element={<App />}>
+        <Route path="/" element={<App />}>
           <Route path="home" element={<Home />} />
           <Route path="about" element={<Abouts />}>
             <Route index element={<><h2>Please select about</h2></>} />
