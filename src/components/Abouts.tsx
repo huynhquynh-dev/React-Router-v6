@@ -6,6 +6,7 @@ const Abouts = () => {
     return (
         <main>
             <h2>About</h2>
+            <Link to="new">Create new About</Link>
             <div>
                 <nav>
                     {abouts.map(about => (

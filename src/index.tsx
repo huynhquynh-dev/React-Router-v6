@@ -8,6 +8,7 @@ import Home from './components/Home';
 import NotFound from './components/NotFound';
 import './index.css';
 import About from './components/About';
+import NewAbout from './components/NewAbout';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -18,6 +19,7 @@ ReactDOM.render(
           <Route path="about" element={<Abouts />}>
             <Route index element={<><h2>Please select about</h2></>} />
             <Route path=":aboutId" element={<About />} />
+            <Route path="new" element={<NewAbout />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Route>
