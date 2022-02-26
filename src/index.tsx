@@ -3,10 +3,11 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import reportWebVitals from 'reportWebVitals';
 import App from './App';
-import About from './components/About';
+import Abouts from './components/Abouts';
 import Home from './components/Home';
 import NotFound from './components/NotFound';
 import './index.css';
+import About from './components/About';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -14,7 +15,10 @@ ReactDOM.render(
       <Routes>
         <Route path="/" element={<App />}>
           <Route path="home" element={<Home />} />
-          <Route path="about" element={<About />} />
+          <Route path="about" element={<Abouts />}>
+            <Route index element={<><h2>Please select about</h2></>} />
+            <Route path=":aboutId" element={<About />} />
+          </Route>
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

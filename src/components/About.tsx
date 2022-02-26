@@ -1,19 +1,15 @@
 import { abouts } from 'data/abouts'
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 
 const About = () => {
+    const params = useParams<{ aboutId: string }>()
+    const about = abouts.find(e => e.id.toString() === params.aboutId)
     return (
-        <main>
-            <h2>About</h2>
-            <div>
-                <nav>
-                    {abouts.map(about => (
-                        <Link key={about.id} to={`${about.id}`} > {about.name}</Link>
-                    ))}
-                </nav>
-            </div>
-        </main >
+        <h2>
+            {about ? `About ${about?.name}` : "Not found About"}
+        </h2>
+
     )
 }
 
